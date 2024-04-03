@@ -8,7 +8,7 @@ app.config['SECRET_KEY'] = 'whale123'
 def generate_jwt_token(is_admin):
     payload = {
         'is_admin': is_admin,
-        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=1000)
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=10000)
     }
     token = jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256')
     return token
